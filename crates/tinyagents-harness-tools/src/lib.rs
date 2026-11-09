@@ -11,6 +11,7 @@ pub mod per_call;
 mod plan_exit;
 pub mod run_mode;
 pub mod schema;
+#[cfg(feature = "todos")]
 pub mod scratchpad;
 #[cfg(feature = "state-block")]
 pub mod state_block;

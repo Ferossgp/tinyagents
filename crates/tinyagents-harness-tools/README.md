@@ -14,6 +14,10 @@ available without optional features. The `state-block` feature enables the
 run-state middleware and its required `goals` and `todos` modules. The
 `json-schema` feature enables schema derives on tool-owned data types.
 
+The `scratchpad` module is part of `todos`: it stores plan notes and closes
+finished todo plans. It is unavailable when `todos` is disabled, including
+goals-only builds; `state-block` enables it through its existing `todos` edge.
+
 The opt-in `fs`, `net`, and `exec` features expose the standard tool families
 under `tinyagents_harness_tools::{fs,net,exec}`. The `media` feature exposes
 the generic artifact-filing wrapper at `tinyagents_harness_tools::media`, and
