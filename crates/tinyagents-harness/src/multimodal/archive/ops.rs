@@ -93,7 +93,10 @@ fn inspect_zip(bytes: &[u8], limits: &ArchiveLimits) -> Result<ArchiveListing, A
         if !add_entry(
             &mut list,
             ArchiveEntry {
-                name: file.name().to_string(),
+                name: file
+                    .name()
+                    .map_err(|e| ArchiveError::Invalid(e.to_string()))?
+                    .into_owned(),
                 kind,
                 declared_size: size,
             },
